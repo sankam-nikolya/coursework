@@ -14,7 +14,7 @@ if(isset($_GET['teach'])){
     $ann = $nn->teach($tonn);
 }
 
-echo "template/index.html";
+include "template/index.html";
 
 
 ?>
