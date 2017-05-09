@@ -1,9 +1,18 @@
 <?php
-/**
-* 
-*/
 class NeuralNetwork
 {
+
+	/**
+	 * Изменение размеров изображения
+	 *
+	 * @param  string $infile    Файл
+	 * @param  int $neww 		 Новая ширина изображения
+	 * @param  int $newh 		 Новая высота изображения
+	 * @param  int $quality 	 Качество изображения
+	 *
+	 * @return object             Объект изображения
+ 	*/
+
     public function imageresize($infile,$neww,$newh,$quality) {
         $im=imagecreatefromjpeg($infile);
         $im1=imagecreatetruecolor($neww,$newh);
@@ -11,6 +20,16 @@ class NeuralNetwork
         imagejpeg($im1,$infile,$quality);
         return $im1;
     }
+
+	/**
+	 * Добавление фигуры
+	 *
+	 * @param  string $name    		Название фигуры
+	 * @param  string $dir 		 	Папка для обучения
+	 * @param  array &$newh 		Указатель на массив
+	 *
+	 * @return array             	Готовый массив для обучения сети
+ 	*/
 
     public function addFigure($name, $dir, &$tonn)
     {
@@ -42,6 +61,14 @@ class NeuralNetwork
         return $tonn;
     }
 
+	/**
+	 * Подготовка изображения к проверке
+	 *
+	 * @param  string $img    		Ссылка на изображение
+	 *
+	 * @return array             	Массив данных для нейронной сети
+ 	*/
+
     public function input($img)
     {
         $Input = array();
@@ -65,7 +92,15 @@ class NeuralNetwork
         return $Input;
     }
 
-    public function teachThatBitch($tonn)
+	/**
+	 * Обучение нейронной сети
+	 *
+	 * @param  string $tonn    		Массив данных для обучения сети
+	 *
+	 * @return string             	Строка с путем к файлу нейронной сети
+ 	*/
+
+    public function teach($tonn)
     {
         $num = count($tonn);
         $ann = fann_create_standard_array(3, array(256, 128, $num));
@@ -92,12 +127,29 @@ class NeuralNetwork
         fann_destroy($ann);
     }
 
+	/**
+	 * Распознование образов
+	 *
+	 * @param  string $file    		Ссылка к файлу Нейронных Сетей
+	 * @param  string $img    		Ссылка на изображение
+	 *
+	 * @return array             	Массив результатов
+ 	*/
+
     public function think($file, $img)
     {
         $ann = fann_create_from_file($file);
         $output = fann_run($ann, $img);
         return $output;
     }
+
+	/**
+	 * Обработка результата
+	 *
+	 * @param  array $output    	Массив результатов
+	 *
+	 * @return array             	Массив результатов
+ 	*/
 
     public function showResult($output)
     {
