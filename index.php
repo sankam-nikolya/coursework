@@ -20,14 +20,10 @@ if(isset($_POST['checkfigure'])){
     $uploaddir = 'uploads/';
     $uploadfile = $uploaddir . basename($_FILES['getimage']['name']);
     move_uploaded_file($_FILES['getimage']['tmp_name'], $uploadfile);
-
     copy("uploads/".$_FILES['getimage']['name'], "thumbs/".$_FILES['getimage']['name']);
-
     $Input = $nn->input("thumbs/".$_FILES['getimage']['name']);
-
     $output = $nn->think("base/base.ann", $Input);
     $result = $nn->showResult($output);
-
     switch ($result[0]) {
         case '0':
             $answer = "Треугольник";
@@ -42,5 +38,6 @@ if(isset($_POST['checkfigure'])){
             $answer = "неизвестно";
             break;
     }
+    echo $answer;
 }
 ?>
