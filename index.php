@@ -18,12 +18,12 @@ include "template/index.html";
 
 if(isset($_POST['checkfigure'])){
     $uploaddir = 'uploads/';
-    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-    move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
+    $uploadfile = $uploaddir . basename($_FILES['getimage']['name']);
+    move_uploaded_file($_FILES['getimage']['tmp_name'], $uploadfile);
 
-    copy("uploads/".$_FILES['userfile']['name'], "thumbs/".$_FILES['userfile']['name']);
+    copy("uploads/".$_FILES['getimage']['name'], "thumbs/".$_FILES['getimage']['name']);
 
-    $Input = $nn->input("thumbs/".$_FILES['userfile']['name']);
+    $Input = $nn->input("thumbs/".$_FILES['getimage']['name']);
 
     $output = $nn->think("base/base.ann", $Input);
     $result = $nn->showResult($output);
