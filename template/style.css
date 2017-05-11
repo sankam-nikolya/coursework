@@ -29,21 +29,24 @@ body {
 	opacity: 0;
 }
 .welcome-msg {
-	font-size: 60px;
+	font-size: 80px;
 	color: #fff;
 	text-transform: uppercase;
-	padding: 20px 0;
+	padding: 30px 60px;
+	//border-radius: 100px;
+    border: 5px solid #fff;
 	display: inline-block;
 	cursor: pointer;
-	transition: 1s all ease-in-out;
+	transition: .3s all ease;
 }
 .welcome-msg:hover {
 	color: #fafafa;
-	transition: 1s all ease-in-out;
+	transform: scale(1.1);
+	transition: .3s all ease;
 }
 .welcome-msg:hover + .underline {
-	width: 360px;	
-	transition: .5s all ease;
+	width: 400px;	
+	transition: .4s all ease;
 }
 .header .underline {
 	display: block;
@@ -51,6 +54,7 @@ body {
 	margin: 0 auto;
 	border-radius: 100px;
 	height: 5px;
+	margin-top: 20px;
 	background: #fff;
 	transition: .3s all linear;
 }
@@ -75,9 +79,10 @@ body {
 .footer .copyright {
 	font-size: 16px;
 	color: #333;
-	padding: 5px 10px;
+	padding: 7px 15px;
 	border-radius: 100px;
 	background: #fafafa;
+	border: 1px solid #ddd;
 }
 
 /*=====================================================================================*/
