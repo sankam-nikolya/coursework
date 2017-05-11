@@ -1,0 +1,169 @@
+html {
+	height: 100%;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+}
+body {
+	width: 100%;
+    overflow-x: hidden;	
+    background: #fafafa;
+}
+.bg-image {
+	display: block;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+
+	background-image: url('http://www.sleep-planet-mestre.it/app/assets/misc/where-info-background.png');
+	background-position: 50% 0%;
+    background-repeat: repeat-x;
+    background-size: 50% auto;
+}
+.header {
+	position: absolute;
+	z-index: 1;
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding: 100px 0;
+	opacity: 0;
+}
+.welcome-msg {
+	font-size: 60px;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 20px 0;
+	display: inline-block;
+	cursor: pointer;
+	transition: 1s all ease-in-out;
+}
+.welcome-msg:hover {
+	color: #fafafa;
+	transition: 1s all ease-in-out;
+}
+.welcome-msg:hover + .underline {
+	width: 360px;	
+	transition: .5s all ease;
+}
+.header .underline {
+	display: block;
+	width: 120px;
+	margin: 0 auto;
+	border-radius: 100px;
+	height: 5px;
+	background: #fff;
+	transition: .3s all linear;
+}
+.wrapper {
+	display: block;
+    position: relative;
+    height: 400px;
+    top: -20px;
+    text-align: center;
+    border-top: 4px solid #13a9e4;
+    background: #fafafa;
+    padding: 40px 100px 0px 100px;
+}
+.footer {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: 95%;
+	height: 5%;
+	text-align: center;
+}
+.footer .copyright {
+	font-size: 16px;
+	color: #333;
+	padding: 5px 10px;
+	border-radius: 100px;
+	background: #fafafa;
+}
+
+/*=====================================================================================*/
+/* ANIMISTA KEYFRAMES*/
+
+.slide-bottom {
+	-webkit-animation: slide-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-moz-animation: slide-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.slide-bottom-m {
+	-webkit-animation: slide-bottom-m 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-moz-animation: slide-bottom-m 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-bottom-m 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fade-in {
+	-webkit-animation: fade-in 1s ease both;
+	-moz-animation: fade-in 1s ease both;
+	animation: fade-in 1s ease both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@-webkit-keyframes slide-bottom-m {
+  0% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes slide-bottom-m {
+  0% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in {
+  0% {
+  	opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+  	opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

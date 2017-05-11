@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Нейронные сети - BETA</title>
-	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/zirion/coursework/template/reset.css">
+	<link rel="stylesheet" type="text/css" href="/zirion/coursework/template/style.css">
 	<link rel="icon" type="image/png" href="http://bayoucityfellowship.com/wp-content/uploads/2015/03/Logo.png">
 	<link rel="shortcut icon" type="image/png" href="http://bayoucityfellowship.com/wp-content/uploads/2015/03/Logo.png">
-	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<div class="header">
-		<span>Добро пожаловать</span>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+	</style>
+	<div class="header" onclick="location.href = '/zirion/coursework/'">
+		<span class="welcome-msg">Добро пожаловать</span>
+		<span class="underline"></span>
 	</div>
+	<div class="bg-image"></div>
 	<div class="wrapper">
 		<form id="send_image" enctype="multipart/form-data" action="" method="POST">
 			<input type="file" name="getimage">
 			<input type="submit" name="checkfigure">
 		</form>
 	</div>
+	<div class="footer">
+		<span class="copyright">Демонстрация нейросетей 2017 &copy; IP-615 Group</span>
+	</div>
+	<script src="/zirion/coursework/template/scripts.js"></script>
 </body>	
 </html>
