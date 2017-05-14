@@ -14,7 +14,7 @@ body {
 	height: 400px;
 	overflow: hidden;
 
-	background-image: url('http://www.sleep-planet-mestre.it/app/assets/misc/where-info-background.png');
+	background-image: url('../where-info-background.png');
 	background-position: 50% 0%;
     background-repeat: repeat-x;
     background-size: 50% auto;
@@ -66,7 +66,13 @@ body {
     text-align: center;
     border-top: 4px solid #13a9e4;
     background: #fafafa;
+    color: #333;
     padding: 40px 100px 0px 100px;
+}
+.wrapper .text {
+	display: inline-block;
+	font-size: 20px;
+	padding: 10px 0;
 }
 .footer {
 	position: absolute;
@@ -83,6 +89,54 @@ body {
 	border-radius: 100px;
 	background: #fafafa;
 	border: 1px solid #ddd;
+}
+
+#send_image {
+	display: block;
+	text-align: center;
+}
+.upload-img {
+	display: inline-block;
+	cursor: pointer;
+	background: none;
+	border: 2px dashed #13a9e4;
+	border-radius: 100px;
+	margin: 10px 0;
+	position: relative;
+	text-align: center;
+	color: #13a9e4;
+	font-size: 20px;
+	transition: .2s all ease-in-out;
+}
+.upload-img:hover {
+	animation-play-state: paused;
+	transform: scale(1.05);
+	transition: .2s all ease-in-out;
+}
+.upload-img span {
+	display: inline-block;
+	padding: 10px 30px;
+}
+.upload-img input[type="file"] {
+	display: none;
+}
+#send_image input[type="submit"] {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 10px 30px;
+	font-family: inherit;
+	background: #13a9e4;
+	font-size: 20px;
+	color: #fff;
+	border: 0;
+	border-radius: 100px;
+	cursor: pointer;
+	transition: .2s all ease-in-out;
+}
+#send_image input[type="submit"]:hover {
+	transform: scale(1.05);
+	transition: .2s all ease-in-out;
 }
 
 /*=====================================================================================*/
@@ -104,6 +158,46 @@ body {
 	-webkit-animation: fade-in 1s ease both;
 	-moz-animation: fade-in 1s ease both;
 	animation: fade-in 1s ease both;
+}
+
+.upload-flickering {
+	-webkit-animation: flickering 3s linear both infinite;
+	-moz-animation: flickering 3s linear both infinite;
+	animation: flickering 3s linear both infinite;
+}
+
+/**
+ * ----------------------------------------
+ * animation flickering
+ * ----------------------------------------
+ */
+ @-webkit-keyframes flickering {
+	0% {
+		-webkit-transform: scale(1.0);
+				transform: scale(1.0);
+	}
+	50% {
+		-webkit-transform: scale(1.04);
+				transform: scale(1.04);
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+				transform: scale(1.0);
+	}
+}
+@keyframes flickering {
+	0% {
+		-webkit-transform: scale(1.0);
+				transform: scale(1.0);
+	}
+	50% {
+		-webkit-transform: scale(1.04);
+				transform: scale(1.04);
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+				transform: scale(1.0);
+	}
 }
 
 /**

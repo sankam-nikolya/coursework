@@ -5,8 +5,8 @@
 	<title>Нейронные сети - BETA</title>
 	<link rel="stylesheet" type="text/css" href="/zirion/coursework/template/reset.css">
 	<link rel="stylesheet" type="text/css" href="/zirion/coursework/template/style.css">
-	<link rel="icon" type="image/png" href="http://bayoucityfellowship.com/wp-content/uploads/2015/03/Logo.png">
-	<link rel="shortcut icon" type="image/png" href="http://bayoucityfellowship.com/wp-content/uploads/2015/03/Logo.png">
+	<link rel="icon" type="image/png" href="Logo.png">
+	<link rel="shortcut icon" type="image/png" href="Logo.png">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
@@ -19,10 +19,15 @@
 	</div>
 	<div class="bg-image"></div>
 	<div class="wrapper">
+		<!--<span class="text">Загрузите изображение:</span>-->
 		<form id="send_image" enctype="multipart/form-data" action="" method="POST">
-			<input type="file" name="getimage">
+			<label class="upload-img">
+				<span>Загрузите изображение</span>
+				<input type="file" name="getimage">
+			</label>
 			<input type="submit" name="checkfigure">
 		</form>
+		<div class="result"></div>
 	</div>
 	<div class="footer">
 		<span class="copyright">Демонстрация нейросетей 2017 &copy; IP-615 Group</span>
