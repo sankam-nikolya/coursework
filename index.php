@@ -17,26 +17,30 @@ if(isset($_GET['teach'])){
 include "template/index.html";
 
 if(isset($_POST['checkfigure'])){
-    $uploaddir = 'uploads/';
-    $uploadfile = $uploaddir . basename($_FILES['getimage']['name']);
-    move_uploaded_file($_FILES['getimage']['tmp_name'], $uploadfile);
-    copy("uploads/".$_FILES['getimage']['name'], "thumbs/".$_FILES['getimage']['name']);
-    $Input = $nn->input("thumbs/".$_FILES['getimage']['name']);
-    $output = $nn->think("base/base.ann", $Input);
-    $result = $nn->showResult($output);
-    switch ($result[0]) {
-        case '0':
-            $answer = "Треугольник";
-            break;
-        case '1':
-            $answer = "Круг";
-            break;
-        case '2':
-            $answer = "Квадрат";
-            break;
-        default:
-            $answer = "неизвестно";
-            break;
+    if($_FILES['getimage']['type']=="image/jpeg"){
+        $uploaddir = 'uploads/';
+        $uploadfile = $uploaddir . basename($_FILES['getimage']['name']);
+        move_uploaded_file($_FILES['getimage']['tmp_name'], $uploadfile);
+        copy("uploads/".$_FILES['getimage']['name'], "thumbs/".$_FILES['getimage']['name']);
+        $Input = $nn->input("thumbs/".$_FILES['getimage']['name']);
+        $output = $nn->think("base/base.ann", $Input);
+        $result = $nn->showResult($output);
+        switch ($result[0]) {
+            case '0':
+                $answer = "Треугольник";
+                break;
+            case '1':
+                $answer = "Круг";
+                break;
+            case '2':
+                $answer = "Квадрат";
+                break;
+            default:
+                $answer = "неизвестно";
+                break;
+        }
+    }else{
+        $answer = "К загрузке разрешены только jpg изображения";
     }
     echo <<<JSCRIPT
     <br>
