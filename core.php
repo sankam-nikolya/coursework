@@ -22,11 +22,11 @@ class NeuralNetwork
     }
 
 	/**
-	 * Добавление фигуры
+	 * Инициализация фигуры
 	 *
 	 * @param  string $name    		Название фигуры
 	 * @param  string $dir 		 	Папка для обучения
-	 * @param  array &$newh 		Указатель на массив
+	 * @param  array &$tonn 		Указатель на массив
 	 *
 	 * @return array             	Готовый массив для обучения сети
  	*/
