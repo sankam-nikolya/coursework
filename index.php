@@ -42,10 +42,10 @@ if(isset($_POST['checkfigure'])){
     }else{
         $answer = "К загрузке разрешены только jpg изображения";
     }
-    echo <<<JSCRIPT
+   echo <<<JSCRIPT
     <br>
 <script>
-$(".result").append('$answer');
+$(".result").html('<span class="text">Вероятно, на изображении </span><span class="answer">$answer</span>');
 </script>
 JSCRIPT;
 }
