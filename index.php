@@ -38,6 +38,11 @@ if(isset($_POST['checkfigure'])){
             $answer = "неизвестно";
             break;
     }
-    echo $answer;
+   echo <<<JSCRIPT
+    <br>
+<script>
+$(".result").html('<span class="text">Вероятно, на изображении </span><span class="answer">$answer</span>');
+</script>
+JSCRIPT;
 }
 ?>
